@@ -1,0 +1,1 @@
+alert('Alert com a nossa mensagem');
