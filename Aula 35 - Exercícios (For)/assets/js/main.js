@@ -18,7 +18,7 @@ for (i = 0; i < elementos.length; i++){
 //Versão por mim
 elementos.forEach( a => {
     const elem = document.createElement(a.tag);
-    elem.innerHTML = a.texto
+    elem.innerText = a.texto
     container.append(elem);
 }) 
 
