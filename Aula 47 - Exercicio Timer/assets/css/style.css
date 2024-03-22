@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
 :root {
-  --primary-color: rgb(17, 86, 102);
-  --primary-color-darker: rgb(9, 48, 56);
+  --primary-color: rgb(8, 159, 170);
+  --primary-color-darker: rgb(5, 86, 92);
 }
 
 * {
   box-sizing: border-box;
   outline: 0;
+  
 }
 
 body {
   margin: 0;
   padding: 0;
   background: var(--primary-color);
-  font-family: 'Open sans', sans-serif;
+  font-family: 'Fira Code', sans-serif;
   font-size: 1.3em;
   line-height: 1.5em;
 }
@@ -21,7 +23,7 @@ body {
 .container {
   max-width: 640px;
   margin: 50px auto;
-  background: #fff;
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
 }
@@ -39,7 +41,8 @@ form input {
 }
 
 form input:focus {
-  outline: 1px solid var(--primary-color);
+  outline: 1px solid var(--primary-color)
+
 }
 
 form button {
@@ -50,10 +53,10 @@ form button {
   font-weight: 700;
   height: 50px;
   cursor: pointer;
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
-form button:hover {
+form button:hover{
   background: var(--primary-color-darker);
 }
 
