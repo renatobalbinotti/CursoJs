@@ -1,10 +1,9 @@
 function Calculadora() {
   this.display = document.querySelector(".display");
 
-  this.inicia = () => {this.pressionaTeclado()};
+  this.inicia = () => this.pressionaTeclado();
 
   this.pressionaTeclado = () => {
-    console.log('Passei');
     document.addEventListener("keypress", (e) => {
       const listKey = ["+", "-", "*", "/", "(", ")"];
 
