@@ -30,11 +30,11 @@ function criaProduto(nome) {
   };
 }
 
-const p1 = new Produto('Camiseta', 20, 3);
+/* const p1 = new Produto('Camiseta', 20, 3);
 console.log(p1);
 p1.estoque = 'asdasd';
-console.log(p1.estoque);
+console.log(p1.estoque); */
 
-/* const p2 = criaProduto("Camiseta");
+const p2 = criaProduto("Camiseta");
 p2.nome = "Qualquer coisa.";
-console.log(p2.nome); */
+console.log(p2.nome);
