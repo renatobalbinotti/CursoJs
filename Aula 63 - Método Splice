@@ -1,0 +1,20 @@
+//               -5         -4          -3        -2        -1
+//                0         1           2         3         4
+const nomes = ["Renato", "Jhony", "Guilherme", "Lucas", "Fasola"];
+
+//nomes.splice(indice, delete, elem1, elem2, elem3);
+
+console.log(nomes);
+//const removidos = nomes.splice(-2, 1);
+
+//Simulando o .shift()
+const removidos = nomes.splice(0, 1);
+
+//Simulando o .push();
+nomes.splice(nomes.length, 0, 'push');
+
+//simulando o .unshift()
+nomes.splice(0, 0, 'unshift')
+
+console.log(nomes);
+console.log(removidos);
