@@ -26,12 +26,6 @@ Pessoa.prototype.nomeCompleto = function () {
 };
 
 const p1 = new Pessoa("Renato", "Balbinotti");
-const p2 = new Pessoa("Jhonathan", "Guilherme");
-const data = new Date();
 
 console.dir(p1);
-console.dir(p2);
-console.dir(data);
-
 console.log(p1.nomeCompleto());
-console.log(p2.nomeCompleto());
