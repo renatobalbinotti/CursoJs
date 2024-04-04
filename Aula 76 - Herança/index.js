@@ -23,18 +23,18 @@ Camiseta.prototype.constructor = Camiseta;
 function Caneca(nome, preco, material, estoque) {
   Produto.call(this, nome, preco);
   this.material = material;
-  
-  Object.defineProperty(this, 'estoque', {
+
+  Object.defineProperty(this, "estoque", {
     enumerable: true,
     configurable: false,
     get: function () {
       return estoque;
     },
-    set: function(valor) {
-      if (typeof valor !== 'number') return;
+    set: function (valor) {
+      if (typeof valor !== "number") return;
       estoque = valor;
-    }
-  })
+    },
+  });
 }
 
 Caneca.prototype = Object.create(Produto.prototype);
