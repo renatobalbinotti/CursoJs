@@ -39,6 +39,6 @@ ValidaCPF.prototype.criaDigito = function (cpfParcial) {
   return digito > 9 ? "0" : String(digito);
 };
 
-const cpf = new ValidaCPF("110.623.089-21");
+const cpf = new ValidaCPF("673.041.550-94");
 if (cpf.valida()) return console.log("CPF válido!");
 console.log("CPF inválido!");
