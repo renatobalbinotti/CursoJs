@@ -45,7 +45,3 @@ class CPFValidator {
     return this.newCPF === this.cleanCPF;
   }
 }
-
-const validateCPF = new CPFValidator("673.041.550-94");
-if (validateCPF.validate()) return console.log("CPF válido!");
-console.log("CPF inválido");
