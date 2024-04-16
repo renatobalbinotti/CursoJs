@@ -11,6 +11,10 @@ class ValidateForm {
   }
 
   handleSubmit(e) {
+    this.form.querySelectorAll(".error-text").forEach((e) => {
+      e.remove();
+    });
+    
     e.preventDefault();
     const validFields = this.validateFields();
     const validPassword = this.validatePasswords();
@@ -24,10 +28,6 @@ class ValidateForm {
   validateFields() {
     let valid = true;
 
-    this.form.querySelectorAll(".error-text").forEach((e) => {
-      e.remove();
-    });
-
     for (let field of this.form.querySelectorAll(".validate")) {
       if (!field.value) {
         const label = field.previousElementSibling.innerText;
@@ -36,7 +36,7 @@ class ValidateForm {
       }
 
       if (field.classList.contains("user")) {
-        if (!this.validateCPF(field)) valid = false;
+        if (!this.validateUser(field)) valid = false;
       }
 
       if (field.classList.contains("cpf")) {
@@ -54,7 +54,7 @@ class ValidateForm {
       isValid = false;
     }
 
-    if (field.value.match(/^[a-zA-z0-9]+$/g)) {
+    if (!field.value.match(/^[a-zA-z0-9]+$/g)) {
       this.createError(
         field,
         "Nome de Usuário precisa conter apenas letras e números"
@@ -82,10 +82,12 @@ class ValidateForm {
     const rePassword = this.form.querySelector(".re-password");
 
     if (password.value !== rePassword.value) {
+      console.log('Senhas erradas.')
       this.createError(password, "As senhas não coincidem");
       this.createError(rePassword, "As senhas não coincidem");
       valid = false;
     }
+
     if (password.value.length < 6 || password.value.length > 12) {
       this.createError(
         password,
