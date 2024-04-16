@@ -16,8 +16,13 @@ function randomNumber(min = 0, max = 5) {
 
 async function executa() {
   try {
-    const fase1 = await wait("Fase 1", randomNumber(0, 3));
+    //Exemplo de promise pendente
+    const fase1 = wait("Fase 1", randomNumber(0, 1));
     console.log(fase1);
+
+    setTimeout(function () {
+      console.log(fase1);
+    }, 1100);
 
     const fase2 = await wait("Fase 2", randomNumber(0, 3));
     console.log(fase2);
@@ -32,3 +37,8 @@ async function executa() {
 }
 
 executa();
+
+/* 
+  Fases das Promises: 
+  Pending -> Resolved Or Rejected -> Concluída6
+ */
