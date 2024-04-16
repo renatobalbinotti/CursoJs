@@ -14,13 +14,13 @@ class ValidateForm {
     this.form.querySelectorAll(".error-text").forEach((e) => {
       e.remove();
     });
-    
+
     e.preventDefault();
     const validFields = this.validateFields();
     const validPassword = this.validatePasswords();
 
-    if(validFields && validPassword) {
-      alert('Formulário enviado');
+    if (validFields && validPassword) {
+      alert("Formulário enviado");
       this.form.submit();
     }
   }
@@ -82,7 +82,7 @@ class ValidateForm {
     const rePassword = this.form.querySelector(".re-password");
 
     if (password.value !== rePassword.value) {
-      console.log('Senhas erradas.')
+      console.log("Senhas erradas.");
       this.createError(password, "As senhas não coincidem");
       this.createError(rePassword, "As senhas não coincidem");
       valid = false;
@@ -91,7 +91,7 @@ class ValidateForm {
     if (password.value.length < 6 || password.value.length > 12) {
       this.createError(
         password,
-        "Senhas precisam estar entre 6 e 12 caracteres."
+        "A Senha precisa estar entre 6 e 12 caracteres."
       );
       valid = false;
     }
