@@ -3,47 +3,32 @@ function wait(msg, time) {
     if (typeof msg !== "string") return reject("CAI NO ERRO");
 
     setTimeout(() => {
-      return resolve(msg.toUpperCase() + " Passei na Promise");
+      return resolve(msg.toUpperCase() + " - Passei na Promise");
     }, time);
   });
 }
 
-// Promise.all Promise.race Promise.resolve Promise.reject
-
-const promises = [
-  wait("Promise 2", 3000),
-  wait("Promise 3", 7000),
-  wait("Promise 4", 2000),
-];
-
-/* Promise.all - Retorna todas as promises */
-/* Promise.all(promises)
-  .then((val) => {
-    console.log(val);
-  })
-  .catch((err) => {
-    console.log(err);
-  }); */
-
-/* Promise.race - retorna a primeira promise a ser executada */
-/* Promise.race(promises)
-  .then((resp) => {
-    console.log(resp);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
- */
-
-function baixaPagina() {
-  let inCache = false;
-
-  if (inCache) {
-    return Promise.reject("Página em cache");
-  }
-  return wait("Baixei a Página", 3000);
+function randomNumber(min = 0, max = 5) {
+  min *= 1000;
+  max *= 1000;
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
-baixaPagina()
-  .then((resp) => console.log(resp))
-  .catch((err) => console.log("Erro", err));
+async function executa() {
+  try {
+    const fase1 = await wait("Fase 1", randomNumber(0, 3));
+    console.log(fase1);
+
+    const fase2 = await wait("Fase 2", randomNumber(0, 3));
+    console.log(fase2);
+
+    const fase3 = await wait("Fase 3", randomNumber(0, 3));
+    console.log(fase3);
+
+    console.log("Terminamos na Fase: " + fase3);
+  } catch (error) {
+    console.log("Erro: " + error);
+  }
+}
+
+executa();
