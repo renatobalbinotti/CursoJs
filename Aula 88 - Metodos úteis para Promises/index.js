@@ -45,7 +45,5 @@ function baixaPagina() {
 }
 
 baixaPagina()
-  .then((resp) => {
-    console.log(resp);
-  })
+  .then((resp) => console.log(resp))
   .catch((err) => console.log("Erro", err));
