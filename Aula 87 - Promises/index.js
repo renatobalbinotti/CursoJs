@@ -17,7 +17,7 @@ function randomNumber(min, max) {
 wait("Frase 1", randomNumber(1, 2))
   .then((resp) => {
     console.log(resp);
-    return wait(222, randomNumber(1, 2));
+    return wait("Frase 2", randomNumber(1, 2));
   })
   .then((resp) => {
     console.log(resp);
@@ -26,6 +26,7 @@ wait("Frase 1", randomNumber(1, 2))
   .then((resp) => {
     console.log(resp);
   })
+  .finally((event) => {})
   .catch((err) => {
     console.log("Error: " + err);
   });
@@ -39,23 +40,22 @@ const promises = [
 ];
 
 /* Promise.all - Retorna todas as promises */
-/* Promise.all(promises)
-    .then((val) => {
-      console.log(val);
-    })
-    .catch((err) => {
-      console.log(err);
-    }); */
+Promise.all(promises)
+  .then((val) => {
+    console.log(val);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 /* Promise.race - retorna a primeira promise a ser executada */
-/* Promise.race(promises)
-    .then((resp) => {
-      console.log(resp);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-   */
+Promise.race(promises)
+  .then((resp) => {
+    console.log(resp);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 function baixaPagina() {
   let inCache = false;
