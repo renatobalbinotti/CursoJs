@@ -29,26 +29,26 @@ wait("Frase 1", randomNumber(1, 2))
   .catch((err) => {
     console.log("Error: " + err);
   });
-  
-  // Promise.all Promise.race Promise.resolve Promise.reject
-  
-  const promises = [
-    wait("Promise 2", 3000),
-    wait("Promise 3", 7000),
-    wait("Promise 4", 2000),
-  ];
-  
-  /* Promise.all - Retorna todas as promises */
-  /* Promise.all(promises)
+
+// Promise.all Promise.race Promise.resolve Promise.reject
+
+const promises = [
+  wait("Promise 2", 3000),
+  wait("Promise 3", 7000),
+  wait("Promise 4", 2000),
+];
+
+/* Promise.all - Retorna todas as promises */
+/* Promise.all(promises)
     .then((val) => {
       console.log(val);
     })
     .catch((err) => {
       console.log(err);
     }); */
-  
-  /* Promise.race - retorna a primeira promise a ser executada */
-  /* Promise.race(promises)
+
+/* Promise.race - retorna a primeira promise a ser executada */
+/* Promise.race(promises)
     .then((resp) => {
       console.log(resp);
     })
@@ -56,17 +56,16 @@ wait("Frase 1", randomNumber(1, 2))
       console.log(err);
     });
    */
-  
-  function baixaPagina() {
-    let inCache = false;
-  
-    if (inCache) {
-      return Promise.reject("Página em cache");
-    }
-    return wait("Baixei a Página", 3000);
+
+function baixaPagina() {
+  let inCache = false;
+
+  if (inCache) {
+    return Promise.reject("Página em cache");
   }
-  
-  baixaPagina()
-    .then((resp) => console.log(resp))
-    .catch((err) => console.log("Erro", err));
-  
+  return wait("Baixei a Página", 3000);
+}
+
+baixaPagina()
+  .then((resp) => console.log(resp))
+  .catch((err) => console.log("Erro", err));
