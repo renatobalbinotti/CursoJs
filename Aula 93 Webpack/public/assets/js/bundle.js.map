@@ -1,1 +1,1 @@
-{"version":3,"file":"bundle.js","mappings":"AAGAA,QAAQC,IAAI","sources":["webpack://aula-93---webpack/./src/index.js"],"sourcesContent":["// Linha 1\r\n// Linha 2\r\n// Linha 3\r\nconsole.log(\"EIIIIII\");\r\n"],"names":["console","log"],"sourceRoot":""}
+{"version":3,"file":"bundle.js","mappings":"AAGAA,QAAQC,IAAI","sources":["webpack://aula-93-webpack/./src/index.js"],"sourcesContent":["// Linha 1\r\n// Linha 2\r\n// Linha 3\r\nconsole.log(\"EIIIIII\");\r\n"],"names":["console","log"],"sourceRoot":""}
