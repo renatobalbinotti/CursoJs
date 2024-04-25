@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso Javascript</title>
+  </head>
+
+  <body>
+    <section class="container">
+      <h1>Gerador de Senhas</h1>
+
+      <div class="generated-password"></div>
+
+      Quantidade de Caracteres:
+      <input type="number" class="maxCharacters" min="1" max="50" value="1" /> <br />
+
+      Adicionar Números:
+      <input type="checkbox" class="chk_addNumbers" checked /> <br />
+
+      Letras maiúsculas:
+      <input type="checkbox" class="chk_capitalLetters" />
+      <br />
+
+      Letras minúsculas:
+      <input type="checkbox" class="chk_smallLetters" checked />
+      <br />
+
+      Letras símbolos:
+      <input type="checkbox" class="chk_symbolLetters" />
+      <br />
+
+      <button class="btn_generatePassword">Gerar senha</button>
+    </section>
+
+    <script src="./assets/js/bundle.js"></script>
+  </body>
+</html>
