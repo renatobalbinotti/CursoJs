@@ -5,9 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 mongoose
   .connect(process.env.CONNECTIONSTRING)
-  .then(() => {
-    app.emit("pronto");
-  })
+  .then(() => app.emit("pronto"))
   .catch((e) => console.error(e));
 
 const session = require("express-session");
@@ -18,7 +16,11 @@ const routes = require("./routes");
 const path = require("path");
 const helmet = require("helmet");
 const csrf = require("csurf");
-const { middlewareGlobal, checkCSRFError, csrfMiddleware } = require("./src/middlewares/middleware");
+const {
+  middlewareGlobal,
+  checkCSRFError,
+  csrfMiddleware,
+} = require("./src/middlewares/middleware");
 
 const sessionOptions = session({
   secret: "Renatinho",
