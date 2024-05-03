@@ -39,6 +39,7 @@ app.set("view engine", "ejs");
 app.use(
   helmet(),
   express.urlencoded({ extended: true }),
+  express.json(),
   express.static(path.resolve(__dirname, "public")),
   sessionOptions,
   flash(),
@@ -51,7 +52,7 @@ app.use(
 
 app.on("pronto", () => {
   app.listen(3000, () => {
-    console.log("Acessar http://localhost:3000");
+    console.log("Acessar http://127.0.0.1:3000");
     console.log("Servidor executando na porta 3000");
   });
 });
